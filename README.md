@@ -81,3 +81,10 @@ Make release 0.1.1
  - En el panel lateral veras una nueva opcion llamada `Carrito de configuracion`
  - Haz clic en esta opcion para configurar el plugin
  - En esta pagina podras configurar el simbolo de moneda, items del carrito (JSON) para simular el backend
+9. Agregar el Widget
+ - Para ver el carrito simplemente en cualquier pagina que desees agregar el widget, ve al panel de administracion de WordPress
+ - En el menu lateral izquierdo, selecciona la opcion de `Paginas`
+ - Edita o Crea una pagina nueva donde deseas visualizar el carrito
+ - En el editor agrega un nuevo bloque y busca el bloque de `Simple Shopping Cart`
+   ![img.png](img.png) 
+ - Actualiza la pagina y podras ver el carrito en la pagina seleccionada

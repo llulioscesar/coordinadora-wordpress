@@ -20,13 +20,36 @@ jQuery(document).ready(function($) {
                     cartItemsHtml += `
                         <div class="ssc-cart-item" data-id="${item.id}">
                             <span>${item.name}</span>
-                            <input type="number" value="${item.quantity}" min="1">
-                            <span>${response.currency_symbol}${item.formatted_total}</span>
+                            <span>${response.currency_symbol}${item.formatted_price} c/u</span>
+                            <button class="ssc-quantity-decrease">-</button>
+                            <input type="number" value="${item.quantity}" min="1" readonly>
+                            <button class="ssc-quantity-increase">+</button>
+                            <span>Total: ${response.currency_symbol}${item.formatted_total}</span>
                         </div>
                     `;
                 });
                 $('#ssc-cart-items').html(cartItemsHtml);
                 $('#ssc-subtotal').text(response.currency_symbol + formatNumber(parseFloat(response.subtotal.replace('.', '').replace(',', '.'))));
+
+                // Agregar eventos a los botones de incremento y decremento
+                $('.ssc-quantity-decrease').click(function() {
+                    const $input = $(this).siblings('input');
+                    let quantity = parseInt($input.val(), 10);
+                    if (quantity > 1) {
+                        $input.val(quantity - 1);
+                        updateCart();
+                    } else {
+                        $(this).closest('.ssc-cart-item').remove();
+                        updateCart();
+                    }
+                });
+
+                $('.ssc-quantity-increase').click(function() {
+                    const $input = $(this).siblings('input');
+                    let quantity = parseInt($input.val(), 10);
+                    $input.val(quantity + 1);
+                    updateCart();
+                });
             }
         });
     }
@@ -54,9 +77,4 @@ jQuery(document).ready(function($) {
 
     // Inicializar el carrito
     fetchCart();
-
-    // Manejar la actualización del carrito
-    $('#ssc-update-cart').click(function() {
-        updateCart();
-    });
 });

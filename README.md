@@ -1,11 +1,14 @@
 # Coordinadora WordPress
 
 # Tabla de contenido
-1. [Objetivo](#objetivo)
-2. [Especificaciones](#especificaciones)
-3. [Requisitos Técnicos](#requisitos-técnicos)
-4. [Entregables](#entregables)
-5. [Criterios de Evaluación](#criterios-de-evaluación)
+- [Objetivo](#objetivo)
+- [Especificaciones](#especificaciones)
+- [Requisitos Técnicos](#requisitos-técnicos)
+- [Entregables](#entregables)
+- [Criterios de Evaluación](#criterios-de-evaluación)
+- [Configuracion del ambiente de desarrollo local](#configuracion-del-ambiente-de-desarrollo-local)
+    - [Requisitos](#requisitos)
+    - [Comandos](#comandos)
 
 ## Objetivo
 Desarrollar un widget de carrito de compras que pueda ser integrado en WordPress.
@@ -28,3 +31,17 @@ Desarrollar un widget de carrito de compras que pueda ser integrado en WordPress
 - Funcionalidad: Cumplimiento de los requisitos y especificaciones dados.
 - Creatividad y Solución de Problemas: Eficiencia en las soluciones implementadas y enfoque innovador en la resolución de problemas.
 - Documentación y Explicaciones: Claridad en la documentación y en las explicaciones del código y de la integración.
+
+# Configuracion del ambiente de desarrollo local
+
+## Requisitos
+- Docker [Descargar](https://www.docker.com/products/docker-desktop)
+
+## Comandos
+ejecutar el siguiente comando para construir el ambiente local de wordpress
+- En el puerto 80 se encuentra wordpress
+- En el puerto 3306 se encuentra la base de datos
+- En el puerto 8080 se encuentra phpmyadmin
+```shell
+Make docker
+```

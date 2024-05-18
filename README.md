@@ -8,7 +8,9 @@
 - [Criterios de Evaluación](#criterios-de-evaluación)
 - [Configuracion del ambiente de desarrollo local](#configuracion-del-ambiente-de-desarrollo-local)
     - [Requisitos](#requisitos)
-    - [Comandos](#comandos)
+    - [Docker](#docker)
+    - [Release](#release)
+- [Instalación](#instalación)
 
 ## Objetivo
 Desarrollar un widget de carrito de compras que pueda ser integrado en WordPress.
@@ -36,12 +38,53 @@ Desarrollar un widget de carrito de compras que pueda ser integrado en WordPress
 
 ## Requisitos
 - Docker [Descargar](https://www.docker.com/products/docker-desktop)
+- Git Filter Repo (Opcional) para generar releases [Descargar](https://github.com/newren/git-filter-repo)
 
-## Comandos
+## Docker
 ejecutar el siguiente comando para construir el ambiente local de wordpress
 - En el puerto 80 se encuentra wordpress
 - En el puerto 3306 se encuentra la base de datos
 - En el puerto 8080 se encuentra phpmyadmin
+
+Este comando construye el ambiente de desarrollo local
 ```shell
 Make docker
 ```
+
+## Release
+Este comando crea un release del proyecto. Se debe especificar el numero de version ejem: 0.1.1
+```shell
+Make release 0.1.1
+```
+
+# Instalación
+
+1. Puede [descargar](https://github.com/llulioscesar/coordinadora-wordpress/releases) la version mas reciente del plugin y subirla a su sitio web de wordpress
+2. Acceder al panel de administracion de WordPress
+ - Inicia sesion en tu sitio de WordPress
+ - Ve al panel de administracion de WordPress
+3. Navegar a la pagina de plugins
+ - En el menu lateral izquierdo, selecciona la opcion de `Plugins`
+ - Luego, haz clic en `Añadir nuevo` en la parte superior de la pagina
+4. Subir el Plugin
+ - En la parte superior de la pagina de `Añadir plugins`, haz clic en el boton `Subir plugin`
+5. Seleccionar el Archivo `.zip` del plugin
+ - Haz clic en el boton `Seleccionar archivo`
+ - Navega hasta el lugar donde tienes guardado el archivo `.zip` del plugin en tu computadora.
+ - Selecciona el archivo `.zip` y haz clic en `Abrir`
+6. Instalar el Plugin
+ - Una vez seleccionado el archivo haz clic en el botn `Instalar ahora`
+7. Activar el Plugin
+ - Despues de que WordPress haya subido e instalado el plugin, veras un mensaje que dice `Plugin instalado con exito`
+ - Haz clic en el enlace `Activar plugin` para activar el plugin
+8. Configurar el Plugin
+ - En el panel lateral veras una nueva opcion llamada `Carrito de configuracion`
+ - Haz clic en esta opcion para configurar el plugin
+ - En esta pagina podras configurar el simbolo de moneda, items del carrito (JSON) para simular el backend
+9. Agregar el Widget
+ - Para ver el carrito simplemente en cualquier pagina que desees agregar el widget, ve al panel de administracion de WordPress
+ - En el menu lateral izquierdo, selecciona la opcion de `Paginas`
+ - Edita o Crea una pagina nueva donde deseas visualizar el carrito
+ - En el editor agrega un nuevo bloque y busca el bloque de `Simple Shopping Cart`
+   ![img.png](img.png) 
+ - Actualiza la pagina y podras ver el carrito en la pagina seleccionada

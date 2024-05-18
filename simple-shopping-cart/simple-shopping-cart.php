@@ -2,7 +2,7 @@
 /*
 Plugin Name: Simple Shopping Cart
 Description: Un plugin simple de carrito de compras para WordPress.
-Version: 1.1
+Version: 0.1
 Author: Julio Cesar
 */
 

@@ -1,4 +1,12 @@
 jQuery(document).ready(function($) {
+    function formatNumber(num) {
+        // Convertir el número a string con formato adecuado
+        const parts = num.toFixed(2).split(".");
+        const integerPart = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+        const decimalPart = parts[1] !== "00" ? `,${parts[1]}` : '';
+        return integerPart + decimalPart;
+    }
+
     function fetchCart() {
         $.ajax({
             url: ssc_ajax.ajax_url,
@@ -13,12 +21,12 @@ jQuery(document).ready(function($) {
                         <div class="ssc-cart-item" data-id="${item.id}">
                             <span>${item.name}</span>
                             <input type="number" value="${item.quantity}" min="1">
-                            <span>${response.currency_symbol}${(item.price * item.quantity).toFixed(2)}</span>
+                            <span>${response.currency_symbol}${item.formatted_total}</span>
                         </div>
                     `;
                 });
                 $('#ssc-cart-items').html(cartItemsHtml);
-                $('#ssc-subtotal').text(response.currency_symbol + response.subtotal);
+                $('#ssc-subtotal').text(response.currency_symbol + formatNumber(parseFloat(response.subtotal.replace('.', '').replace(',', '.'))));
             }
         });
     }

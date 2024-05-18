@@ -22,11 +22,24 @@ class SSC_Cart {
         $total_with_tax = $subtotal * (1 + $tax_rate / 100);
 
         $response = [
-            'cart_items' => $cart_items,
-            'subtotal' => number_format($total_with_tax, 2),
+            'cart_items' => array_map(function ($item) {
+                $item['formatted_price'] = self::format_number($item['price']);
+                $item['formatted_total'] = self::format_number($item['price'] * $item['quantity']);
+                return $item;
+            }, $cart_items),
+            'subtotal' => self::format_number($total_with_tax),
             'currency_symbol' => $currency_symbol,
         ];
 
         wp_send_json($response);
+    }
+
+    private static function format_number($num) {
+        // Si el número tiene decimales diferentes de cero, muéstralos
+        if (fmod($num, 1) !== 0.00) {
+            return number_format($num, 2, ',', '.');
+        }
+        // Si el número no tiene decimales diferentes de cero, no los muestres
+        return number_format($num, 0, ',', '.');
     }
 }

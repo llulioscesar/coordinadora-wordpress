@@ -8,7 +8,9 @@
 - [Criterios de Evaluación](#criterios-de-evaluación)
 - [Configuracion del ambiente de desarrollo local](#configuracion-del-ambiente-de-desarrollo-local)
     - [Requisitos](#requisitos)
-    - [Comandos](#comandos)
+    - [Docker](#docker)
+    - [Release](#release)
+- [Instalación](#instalación)
 
 ## Objetivo
 Desarrollar un widget de carrito de compras que pueda ser integrado en WordPress.
@@ -36,12 +38,23 @@ Desarrollar un widget de carrito de compras que pueda ser integrado en WordPress
 
 ## Requisitos
 - Docker [Descargar](https://www.docker.com/products/docker-desktop)
+- Git Filter Repo (Opcional) para generar releases [Descargar](https://github.com/newren/git-filter-repo)
 
-## Comandos
+## Docker
 ejecutar el siguiente comando para construir el ambiente local de wordpress
 - En el puerto 80 se encuentra wordpress
 - En el puerto 3306 se encuentra la base de datos
 - En el puerto 8080 se encuentra phpmyadmin
+
+Este comando construye el ambiente de desarrollo local
 ```shell
 Make docker
 ```
+
+## Release
+Este comando crea un release del proyecto. Se debe especificar el numero de version ejem: 0.1.1
+```shell
+Make release 0.1.1
+```
+
+# Instalación

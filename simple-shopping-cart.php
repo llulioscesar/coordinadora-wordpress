@@ -2,7 +2,7 @@
 /*
 Plugin Name: Simple Shopping Cart
 Description: Un plugin simple de carrito de compras para WordPress.
-Version: 1.0
+Version: 1.1
 Author: Julio Cesar
 */
 
@@ -18,11 +18,13 @@ define('SSC_PLUGIN_URL', plugin_dir_url(__FILE__));
 // Incluir archivos necesarios
 require_once SSC_PLUGIN_DIR . 'includes/class-ssc-cart.php';
 require_once SSC_PLUGIN_DIR . 'includes/class-ssc-ajax-handler.php';
+require_once SSC_PLUGIN_DIR . 'includes/class-ssc-settings.php';
 
 // Inicializar el plugin
 function ssc_init() {
     SSC_Cart::init();
     SSC_Ajax_Handler::init();
+    SSC_Settings::init();
 }
 add_action('init', 'ssc_init');
 
@@ -44,7 +46,7 @@ function ssc_display_cart() {
         <h2>Carrito de Compras</h2>
         <div id="ssc-cart-items"></div>
         <div id="ssc-cart-total">
-            <strong>Subtotal:</strong> $<span id="ssc-subtotal">0.00</span>
+            <strong>Subtotal:</strong> <span id="ssc-subtotal">0.00</span>
         </div>
         <div id="ssc-cart-actions">
             <button id="ssc-update-cart">Actualizar Carrito</button>

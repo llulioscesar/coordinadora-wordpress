@@ -13,12 +13,12 @@ jQuery(document).ready(function($) {
                         <div class="ssc-cart-item" data-id="${item.id}">
                             <span>${item.name}</span>
                             <input type="number" value="${item.quantity}" min="1">
-                            <span>$${(item.price * item.quantity).toFixed(2)}</span>
+                            <span>${response.currency_symbol}${(item.price * item.quantity).toFixed(2)}</span>
                         </div>
                     `;
                 });
                 $('#ssc-cart-items').html(cartItemsHtml);
-                $('#ssc-subtotal').text(response.subtotal.toFixed(2));
+                $('#ssc-subtotal').text(response.currency_symbol + response.subtotal);
             }
         });
     }

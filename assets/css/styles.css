@@ -1,0 +1,29 @@
+#ssc-cart {
+    border: 1px solid #ccc;
+    padding: 20px;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+#ssc-cart-items {
+    margin-bottom: 20px;
+}
+
+.ssc-cart-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.ssc-cart-item input {
+    width: 50px;
+}
+
+#ssc-cart-total {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+#ssc-cart-actions {
+    text-align: right;
+}

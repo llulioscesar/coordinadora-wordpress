@@ -58,3 +58,26 @@ Make release 0.1.1
 ```
 
 # Instalación
+
+1. Puede [descargar](https://github.com/llulioscesar/coordinadora-wordpress/releases) la version mas reciente del plugin y subirla a su sitio web de wordpress
+2. Acceder al panel de administracion de WordPress
+ - Inicia sesion en tu sitio de WordPress
+ - Ve al panel de administracion de WordPress
+3. Navegar a la pagina de plugins
+ - En el menu lateral izquierdo, selecciona la opcion de `Plugins`
+ - Luego, haz clic en `Añadir nuevo` en la parte superior de la pagina
+4. Subir el Plugin
+ - En la parte superior de la pagina de `Añadir plugins`, haz clic en el boton `Subir plugin`
+5. Seleccionar el Archivo `.zip` del plugin
+ - Haz clic en el boton `Seleccionar archivo`
+ - Navega hasta el lugar donde tienes guardado el archivo `.zip` del plugin en tu computadora.
+ - Selecciona el archivo `.zip` y haz clic en `Abrir`
+6. Instalar el Plugin
+ - Una vez seleccionado el archivo haz clic en el botn `Instalar ahora`
+7. Activar el Plugin
+ - Despues de que WordPress haya subido e instalado el plugin, veras un mensaje que dice `Plugin instalado con exito`
+ - Haz clic en el enlace `Activar plugin` para activar el plugin
+8. Configurar el Plugin
+ - En el panel lateral veras una nueva opcion llamada `Carrito de configuracion`
+ - Haz clic en esta opcion para configurar el plugin
+ - En esta pagina podras configurar el simbolo de moneda, items del carrito (JSON) para simular el backend
